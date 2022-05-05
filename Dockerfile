@@ -1,5 +1,4 @@
-FROM adoptopenjdk/openjdk11
-WORKDIR /app
-COPY target/*.jar /app/app.jar
-ENTRYPOINT ["sh", "-c"]
-CMD ["java -jar app.jar"]
+FROM openjdk:8
+EXPOSE 8080
+COPY target/cloud-config-server.jar cloud-config-server.jar
+ENTRYPOINT ["java","-jar","/cloud-config-server.jar"]
