@@ -7,13 +7,7 @@ on:
   push:
     branches: [ main ]
   pull_request:
-    branches: [ main ]
-    
-env:
-  APP_NAME: cloud-config-server
-  REGISTRY_URL: docker.io
-  NAMESPACE: dev
-  TAG: v1.0.0   
+    branches: [ main ]  
 
 jobs:
   build:
@@ -33,7 +27,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: dantesh/cloud-config-server
-        tags: v1.0.0
+        tags: latest
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKER_USERNAME }}
