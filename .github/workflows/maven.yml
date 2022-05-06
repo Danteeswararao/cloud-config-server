@@ -36,7 +36,7 @@ jobs:
       uses: mr-smithers-excellent/docker-build-push@v5
       with:
         image: dantesh/cloud-config-server
-        tags: latest
+        tags: v2.0.0
         registry: docker.io
         dockerfile: Dockerfile
         username: ${{ secrets.DOCKERHUB_USERNAME }}
